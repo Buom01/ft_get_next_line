@@ -6,7 +6,7 @@
 /*   By: badam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 17:06:05 by badam             #+#    #+#             */
-/*   Updated: 2020/02/07 00:57:33 by badam            ###   ########.fr       */
+/*   Updated: 2020/02/07 01:00:25 by badam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ static int		line_joinbuff(char **line, char *buffer, size_t len)
 
 	newlen = ft_strlen(*line) + len + 1;
 	if (!(newline = malloc(newlen * sizeof(char))))
+	{
 		free(*line);
 		return (0);
 	}
