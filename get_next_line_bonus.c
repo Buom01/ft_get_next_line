@@ -6,7 +6,7 @@
 /*   By: badam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 17:06:05 by badam             #+#    #+#             */
-/*   Updated: 2020/02/07 01:11:01 by badam            ###   ########.fr       */
+/*   Updated: 2020/02/07 01:14:51 by badam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ int				get_next_line(int fd, char **line)
 	int			eof;
 	int			join_state;
 
-	if (fd < 0 || fd >= FD_SETSIZE || !line || !(*line = malloc(sizeof(char))))
+	if (fd < 0 || fd >= FD_SETSIZE || !BUFFER_SIZE
+			|| !line || !(*line = malloc(sizeof(char))))
 		return (-1);
 	**line = '\0';
 	eof = 1;
