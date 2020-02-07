@@ -6,7 +6,7 @@
 /*   By: badam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 17:06:05 by badam             #+#    #+#             */
-/*   Updated: 2020/02/07 01:00:25 by badam            ###   ########.fr       */
+/*   Updated: 2020/02/07 01:09:47 by badam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static int		line_joinbuff(char **line, char *buffer, size_t len)
 	if (!(newline = malloc(newlen * sizeof(char))))
 	{
 		free(*line);
+		*line = NULL;
 		return (0);
 	}
 	newlinecpy = newline;
@@ -103,6 +104,9 @@ int				get_next_line(int fd, char **line)
 		prefill = 0;
 	}
 	if (eof == -1)
+	{
 		free(*line);
+		*line = NULL;
+	}
 	return (eof > 0 ? 1 : eof);
 }
