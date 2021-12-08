@@ -6,7 +6,7 @@
 /*   By: badam <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 17:06:14 by badam             #+#    #+#             */
-/*   Updated: 2020/02/05 22:18:05 by badam            ###   ########.fr       */
+/*   Updated: 2021/12/08 18:04:41 by badam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 80
+# endif
 
 size_t	ft_strlen(const char *str);
 int		get_next_line(int fd, char **line);
